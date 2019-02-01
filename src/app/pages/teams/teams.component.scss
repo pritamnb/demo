@@ -1,0 +1,20 @@
+.container {
+overflow: auto;
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    height: 464px;
+    width: 750px;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+}

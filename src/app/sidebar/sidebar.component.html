@@ -1,0 +1,25 @@
+<div class="sidebar">
+  <p style="margin-top: 10%; font-size:24px">DS Panel</p>
+  <div class="sidebarSub">
+    <div>
+      <!-- <p style="color: white">Home</p> -->
+      <!-- <p > -->
+      <div
+        class="ul-sidebarContent"
+        *ngFor="let item of contents; let i = index"
+        (click)="onSelected(i,item['name'],item['path'])"
+      >
+        <!-- <p *ngFor="let icon of icons"> -->
+        <ul>
+          <i class="{{ item['icon'] }}"> </i>
+          {{
+            item["name"]
+          }}
+        </ul>
+        <!-- </p> -->
+      </div>
+      <!-- </p> -->
+    </div>
+  </div>
+  <!-- </div> -->
+</div>

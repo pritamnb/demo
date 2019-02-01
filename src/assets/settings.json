@@ -1,0 +1,12 @@
+[
+  {
+    "name" : "Profile",
+    "path" : "profile",
+    "icon" : "fa fa-user"
+  },
+  {
+    "name" : "Info",
+    "path" : "info",
+    "icon" : "fa fa-question-circle"
+  }
+]

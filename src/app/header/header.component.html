@@ -1,0 +1,20 @@
+<div class="header">
+  <div class="headerLeft"></div>
+  <!-- <div class="dropdown">
+    <i class="fa fa-cog" aria-hidden="true"></i>
+    <ul
+      class="content"
+      *ngFor="let item of settingsElements"
+      (click)="onSettingSelected(item['name'])"
+    >Settings</ul>
+  </div> -->
+  <div class="dropdown">
+      <button class="dropbtn">Setting</button>
+      <div class="dropdown-content" *ngFor="let item of settingsElements; let i=index " (click)="onSettingSelected(item['path'])">
+         <ul >{{item.name}}</ul>
+        <!-- <a href="#">Link 2</a> -->
+        <!-- <a href="#">Link 3</a> -->
+      </div>
+    </div>
+
+</div>
