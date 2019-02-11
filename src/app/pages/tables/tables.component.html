@@ -1,15 +1,15 @@
-<head>
+<!-- <head> -->
   <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" /> -->
-</head>
+<!-- </head> -->
 <!-- hello -->
-<div>
-  <div class="container">
+<!-- <div> -->
+  <!-- <div class="container"> -->
     <!-- <h1>Angular 2 - Pagination Example with logic like Google</h1> -->
-    <div class="text-center">
+    <!-- <div class="text-center"> -->
       <!-- items being paged -->
-      <table>
+      <!-- <table> -->
         <!-- <input type="checkbox" (click)="onCheck()"/> -->
-        <tr>
+        <!-- <tr>
           <th></th>
           <th>Name</th>
           <th>Address</th>
@@ -35,9 +35,9 @@
           <th>{{ item.country }}</th>
         </tr>
       </table>
-    </div>
+    </div> -->
 
-    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+    <!-- <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
       <li [ngClass]="{ disabled: pager.currentPage === 1 }">
         <a (click)="setPage(1)">First</a>
       </li>
@@ -56,7 +56,8 @@
       <li [ngClass]="{ disabled: pager.currentPage === pager.totalPages }">
         <a (click)="setPage(pager.totalPages)">Last</a>
       </li>
-    </ul>
-  </div>
-  <hr />
-</div>
+    </ul> -->
+    <app-pagination [allItems]="allItems"></app-pagination>
+  <!-- </div> -->
+  <!-- <hr /> -->
+<!-- </div> -->

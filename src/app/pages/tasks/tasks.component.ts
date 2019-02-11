@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 
-
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
@@ -12,7 +11,7 @@ export class TasksComponent implements OnInit {
   chart = [];
   chart2 = [];
   @ViewChild('lineChart') private chartRef;
-    chart3: any;
+  chart3: any;
   constructor() {}
 
   ngOnInit() {
@@ -209,7 +208,35 @@ export class TasksComponent implements OnInit {
       }
     });
 
+    // tslint:disable-next-line:no-unused-expression
+    // new Chart('line', {
+    //   type: 'line',
+    //   data: {
+    //     labels: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'], // your labels array
+    //     datasets: [
+    //       {
+    //         data: [443, 256, 165, 10, 156, 265, 356, 543], // your data array
+    //         borderColor: '#00AEFF',
+    //         fill: false
+    //       }
+    //     ]
+    //   },
+    //   options: {
+    //     legend: {
+    //       display: false
+    //     },
+    //     scales: {
+    //       xAxes: [{
+    //         display: true
+    //       }],
+    //       yAxes: [{
+    //         display: true
+    //       }],
+    //     }
+    //   }
+    // });
 
+    // this.chart3 = new Chart(this.chartRef.nativeElement,
     // tslint:disable-next-line:no-unused-expression
     new Chart('line', {
       type: 'line',
@@ -217,9 +244,10 @@ export class TasksComponent implements OnInit {
         labels: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'], // your labels array
         datasets: [
           {
-            data: [443, 256, 165, 10, 156, 265, 356, 543], // your data array
+            data: [0, 0, 0, 450, 0 , 0 , ], // your data array
             borderColor: '#00AEFF',
-            fill: false
+            lineTension: 0,
+            fill: 'origin'
           }
         ]
       },
@@ -227,16 +255,33 @@ export class TasksComponent implements OnInit {
         legend: {
           display: false
         },
+        // plugins: {
+        //   filler: {
+        //     propagate: true
+        //   }
+        // },
+        line: {
+            bezierCurve : false,
+        },
         scales: {
           xAxes: [{
-            display: true
-          }],
+            gridLines: {
+              display: false
+           }},
+            {
+              display: true
+            }
+          ],
           yAxes: [{
-            display: true
-          }],
+            gridLines: {
+              display: false
+           }},
+            {
+              display: true
+            }
+          ]
         }
       }
     });
   }
 }
-// this.chart3 = new Chart(this.chartRef.nativeElement,

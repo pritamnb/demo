@@ -10,6 +10,7 @@ import { TeamsComponent } from './pages/teams/teams.component';
 import { HomeComponent } from './pages/home/home.component';
 import { InfoComponent } from './settings/info/info.component';
 import { ProfileComponent } from './settings/profile/profile.component';
+// import { shared1 } from './shared1/'
 // import { CalendarComponent } from '';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

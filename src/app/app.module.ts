@@ -18,11 +18,10 @@ import { TablesComponent } from './pages/tables/tables.component';
 import { TeamsComponent } from './pages/teams/teams.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SettingsModule } from './settings/settings.module';
-// import { ListComponent } from './pages/list/list.component' ;
+import { Shared1Module } from '../app/shared1/shared1.module';
+import { NgxEditorModule } from 'ngx-editor';
 
-// Angular Material
-// import {MatDatepickerModule} from '@angular/material/datepicker';
-
+// import { PaginationComponent } from './shared/components/pagination/pagination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,13 +37,17 @@ import { SettingsModule } from './settings/settings.module';
     UielementsComponent,
     TablesComponent,
     TeamsComponent,
+    // SharedComponent,
+    // PaginationComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SettingsModule
+    SettingsModule,
+    Shared1Module,
+    NgxEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

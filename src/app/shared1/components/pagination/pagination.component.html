@@ -1,0 +1,85 @@
+  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" /> -->
+<!-- <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+  <li [ngClass]="{ disabled: pager.currentPage === 1 }">
+    <a (click)="setPage(1)">First</a>
+  </li>
+  <li [ngClass]="{ disabled: pager.currentPage === 1 }">
+    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+  </li>
+  <li
+    *ngFor="let page of pager.pages"
+    [ngClass]="{ active: pager.currentPage === page }"
+  >
+    <a (click)="setPage(page)">{{ page }}</a>
+  </li>
+  <li [ngClass]="{ disabled: pager.currentPage === pager.totalPages }">
+    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+  </li>
+  <li [ngClass]="{ disabled: pager.currentPage === pager.totalPages }">
+    <a (click)="setPage(pager.totalPages)">Last</a>
+  </li>
+</ul> -->
+<head>
+  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" /> -->
+</head>
+<!-- hello -->
+<div>
+  <!-- <app-tables (allItemsParent)="AllItems($event)"></app-tables> -->
+  <div class="container">
+    <!-- <h1>Angular 2 - Pagination Example with logic like Google</h1> -->
+    <div class="text-center">
+      <!-- items being paged -->
+      <table>
+        <!-- <input type="checkbox" (click)="onCheck()"/> -->
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>email</th>
+          <th>mobile</th>
+          <th>city</th>
+          <th>state</th>
+          <th>pincode</th>
+          <th>country</th>
+        </tr>
+
+        <tr *ngFor="let item of pagedItems; let i = index">
+          <th>
+            <!-- <inpu/t type="checkbox" (click)="checked($event, i, item)" id="i" /> -->
+          </th>
+          <th>{{ item.name }}</th>
+          <th>{{ item.address }}</th>
+          <th>{{ item.email }}</th>
+          <th>{{ item.mobile }}</th>
+          <th>{{ item.city }}</th>
+          <th>{{ item.state }}</th>
+          <th>{{ item.pincode }}</th>
+          <th>{{ item.country }}</th>
+        </tr>
+      </table>
+    </div>
+
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+      <li [ngClass]="{ disabled: pager.currentPage === 1 }">
+        <a (click)="setPage(1)">First</a>
+      </li>
+      <li [ngClass]="{ disabled: pager.currentPage === 1 }">
+        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <li
+        *ngFor="let page of pager.pages"
+        [ngClass]="{ active: pager.currentPage === page }"
+      >
+        <a (click)="setPage(page)">{{ page }}</a>
+      </li>
+      <li [ngClass]="{ disabled: pager.currentPage === pager.totalPages }">
+        <a (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li [ngClass]="{ disabled: pager.currentPage === pager.totalPages }">
+        <a (click)="setPage(pager.totalPages)">Last</a>
+      </li>
+    </ul>
+    <!-- <app-pagination [totalPages] = "totalPages" [startIndex] = "startIndex" [endIndex] = "endIndex" [pages] = "pages"></app-pagination> -->
+  </div>
+  <hr />
+</div>

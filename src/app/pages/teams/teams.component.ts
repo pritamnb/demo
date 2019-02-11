@@ -14,33 +14,33 @@ student_data: any;
   }
 
   ngOnInit() {
-    this.getUsers();
+    // this.getUsers();
   }
-  getUsers() {
-    this.httpService.get('../../../assets/datatable.json').subscribe(
-      data => {
-        const countTen = 0;
-        // this.users = data as string[];
-        this.student_data = data;
-        // console.log(this.student_data);
-        // console.log(this.users);
-        console.log(Object.keys(this.student_data).length);
-        const dataCount = Object.keys(this.student_data).length;
-        for (let i = 0; i < 10; i++ ) {
-          // console.log(i);
-          // for (let j = 0; j < 10; j++) {
-            console.log(this.student_data[i]);
+  // getUsers() {
+  //   this.httpService.get('../../../assets/datatable.json').subscribe(
+  //     data => {
+  //       const countTen = 0;
+  //       // this.users = data as string[];
+  //       this.student_data = data;
+  //       // console.log(this.student_data);
+  //       // console.log(this.users);
+  //       console.log(Object.keys(this.student_data).length);
+  //       const dataCount = Object.keys(this.student_data).length;
+  //       for (let i = 0; i < 10; i++ ) {
+  //         // console.log(i);
+  //         // for (let j = 0; j < 10; j++) {
+  //           console.log(this.student_data[i]);
 
-          //   // console.log(this.users);
-          //   // countTen = countTen + 1;
-          this.users = this.student_data;
-          // }
-        }
+  //         //   // console.log(this.users);
+  //         //   // countTen = countTen + 1;
+  //         this.users = this.student_data;
+  //         // }
+  //       }
 
-      },
-      (err: HttpErrorResponse) => {
-        console.log(err);
-      }
-    );
-  }
+  //     },
+  //     (err: HttpErrorResponse) => {
+  //       console.log(err);
+  //     }
+  //   );
+  // }
 }
