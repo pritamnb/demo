@@ -1,3 +1,13 @@
-<p>
-  calendar works!
-</p>
+<!-- <link href="https://cdn.syncfusion.com/ej2/bootstrap.css" rel="stylesheet" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" /> -->
+<div class="control-section">
+  <div class="sample-container">
+      <div class="default-section">
+          <ejs-richtexteditor id='mdCustom' #mdCustom [toolbarSettings]='tools' [editorMode]='mode' [formatter]='formatter' (created)='onCreate()'>
+              <ng-template #valueTemplate>
+                  The sample is configured with customized markdown syntax using the __formatter__ property. Type the content and click the toolbar item to view customized markdown syntax. For unordered list, you need to add a plus sign before the word (e.g., + list1). Or To make a phrase bold, you need to add two underscores before and after the phrase (e.g., __this text is bold__).
+              </ng-template>
+          </ejs-richtexteditor>
+      </div>
+  </div>
+</div>

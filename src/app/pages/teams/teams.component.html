@@ -1,29 +1,166 @@
-<!-- <p>Users</p> -->
-<!-- <div class="container">
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>email</th>
-      <th>mobile</th>
-      <th>city</th>
-      <th>state</th>
-      <th>pincode</th>
-      <th>country</th>
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script> -->
+<link href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css" rel="stylesheet">
 
-    </tr>
-    <tr *ngFor="let item of users" >
-      <th>{{item.name}}</th>
-      <th>{{item.address}}</th>
-      <th>{{item.email}}</th>
-      <th>{{item.mobile}}</th>
-      <th>{{item.city}}</th>
-      <th>{{item.state}}</th>
-      <th>{{item.pincode}}</th>
-      <th>{{item.country}}</th>
-    </tr>
-  </table>
+<!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/agate.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/ace/1.2.8/ace.js"></script>
+<script src="https://cdn.bootcss.com/marked/0.3.6/marked.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script> -->
+<div class="container">
+  <div class="buttons">
+    <!-- <div class="button-container"> -->
+    <a class="button" (click)="onClick($event)" id="1">
+      Text Editor
+    </a>
+    <a class="button" (click)="onClick($event)" id="2">
+      DatePicker
+    </a>
+    <a class="button" (click)="onClick($event)" id="3">
+      Drag and Drop
+    </a>
+    <!-- </div> -->
+    <!-- <button (click)="onClick($event)" id="1">Text Editor</button>
+    <button (click)="onClick($event)" id="2">Date Picker</button>
+    <button (click)="onClick($event)" id="3">Drop Down</button> -->
+  </div>
+</div>
+<hr />
+<div class="textEditor" *ngIf="textEditor">
+  <div>
+    <h1 style="color:lightseagreen">Ngx-Text Editor</h1>
+    <app-ngx-editor
+      [placeholder]="' Edit Text'"
+      [spellcheck]="false"
+      [(ngModel)]="htmlContent"
+      [toolbar]="tootltipArray"
+      [showToolbar]="true"
+    ></app-ngx-editor>
+  </div>
+  <hr />
+  <h1 style="color:lightseagreen">Froala Editor</h1>
+  <div [froalaEditor]>Hello, Froala!</div>
+
+<hr />
+
+
+
+
+
+<!-- 4 -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet" rel="stylesheet" />
+
+<!--
+<div class="control-section">
+  <div class="sample-container">
+      <div class="default-section">
+          <ejs-richtexteditor id='mdCustom' #mdCustom [toolbarSettings]='tools' [editorMode]='mode' [formatter]='formatter' (created)='onCreate()'>
+              <ng-template #valueTemplate>
+                  The sample is configured with customized markdown syntax using the __formatter__ property. Type the content and click the toolbar item to view customized markdown syntax. For unordered list, you need to add a plus sign before the word (e.g., + list1). Or To make a phrase bold, you need to add two underscores before and after the phrase (e.g., __this text is bold__).
+              </ng-template>
+          </ejs-richtexteditor>
+      </div>
+  </div>
 </div> -->
-<div>
-    <app-ngx-editor></app-ngx-editor>
+<!-- <simplemde  [(ngModel)]="demo"></simplemde> -->
+<!-- <simplemde [(ngModel)]="customize"  [options]="{ toolbar: ['bold', 'italic', 'heading', '|', 'quote','preview'] }"></simplemde> -->
+<!-- <angular-markdown-editor
+  textareaId="editor1" rows="12"
+  name="markdownText" >
+</angular-markdown-editor> -->
+<!-- <simplemde></simplemde> -->
+<!-- [codemirror]="{ lineNumbers: true }" -->
+<!-- <form>
+  <input name="title" type="text" placeholder="Title?" />
+  <textarea name="content" data-provide="markdown" rows="10"></textarea>
+  <label class="checkbox">
+    <input name="publish" type="checkbox"> Publish
+  </label>
+  <hr/>
+  <button type="submit" class="btn">Submit</button>
+</form> -->
+</div>
+<div class="datapicker" *ngIf="datePicker">
+  <!-- 1 -->
+  <p>
+    <mat-form-field>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        styele="font-size: 8px"
+        placeholder="Choose a date"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="picker"
+        readonly
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </p>
+  <!-- <dl-date-time-picker></dl-date-time-picker> -->
+  <hr />
+  <!-- 2 -->
+  <dl-date-time-picker
+    style=" font-size: 13px"
+    startView="day"
+    maxView="year"
+    minView="minute"
+    minuteStep="5"
+    [(ngModel)]="selectedDate"
+  >
+  </dl-date-time-picker>
+  <p style="font-size: 15px">{{ selectedDate }}</p>
+  <hr />
+  <!-- 3 -->
+  <!-- <input
+      type="text"
+      mwlFlatpickr
+      [(ngModel)]="selectedDate"
+      [altInput]="true"
+      [convertModelValue]="true"> <hr>-->
+  <!-- 4 -->
+  <!-- <div ng-repeat="date in dates">
+  <input
+    ng-flatpickr
+    fp-opts="dateOpts"
+    fp-on-setup="datePostSetup(fpItem)"
+    ng-model="date.selectedDateObj"
+    data-enabletime="true">
+</div> -->
+</div>
+<div *ngIf="dragDrop">
+  <div cdkDropListGroup>
+    <div class="example-container">
+      <h2>To do</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="todo"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of todo" cdkDrag>
+          {{ item }}
+        </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>Done</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="done"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of done" cdkDrag>
+          {{ item }}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
